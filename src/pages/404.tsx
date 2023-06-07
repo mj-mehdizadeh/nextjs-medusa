@@ -1,10 +1,7 @@
 import Head from "@modules/common/components/head"
-import Layout from "@modules/layout/templates"
 import Link from "next/link"
-import { ReactElement } from "react"
-import { NextPageWithLayout } from "types/global"
 
-const NotFound: NextPageWithLayout = () => {
+const NotFound = () => {
   return (
     <>
       <Head title="404" description="Something went wrong" />
@@ -21,10 +18,6 @@ const NotFound: NextPageWithLayout = () => {
       </div>
     </>
   )
-}
-
-NotFound.getLayout = (page: ReactElement) => {
-  return <Layout>{page}</Layout>
 }
 
 export default NotFound

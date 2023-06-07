@@ -2,15 +2,13 @@ import { medusaClient } from "@lib/config"
 import { IS_BROWSER } from "@lib/constants"
 import { getProductHandles } from "@lib/util/get-product-handles"
 import Head from "@modules/common/components/head"
-import Layout from "@modules/layout/templates"
 import ProductTemplate from "@modules/products/templates"
 import SkeletonProductPage from "@modules/skeletons/templates/skeleton-product-page"
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import { ParsedUrlQuery } from "querystring"
-import { ReactElement } from "react"
-import { NextPageWithLayout, PrefetchedPageProps } from "types/global"
+import { PrefetchedPageProps } from "types/global"
 
 interface Params extends ParsedUrlQuery {
   handle: string
@@ -22,7 +20,7 @@ const fetchProduct = async (handle: string) => {
     .then(({ products }) => products[0])
 }
 
-const ProductPage: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
+const ProductPage = ({ notFound }: PrefetchedPageProps) => {
   const { query, isFallback, replace } = useRouter()
   const handle = typeof query.handle === "string" ? query.handle : ""
 
@@ -65,10 +63,6 @@ const ProductPage: NextPageWithLayout<PrefetchedPageProps> = ({ notFound }) => {
   }
 
   return <></>
-}
-
-ProductPage.getLayout = (page: ReactElement) => {
-  return <Layout>{page}</Layout>
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {

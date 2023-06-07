@@ -6,7 +6,7 @@ import RefinementList from "@modules/store/components/refinement-list"
 import { useState } from "react"
 import { NextPageWithLayout } from "types/global"
 
-const Store: NextPageWithLayout = () => {
+const Store = () => {
   const [params, setParams] = useState<StoreGetProductsParams>({})
 
   return (
@@ -19,7 +19,5 @@ const Store: NextPageWithLayout = () => {
     </>
   )
 }
-
-Store.getLayout = (page) => <Layout>{page}</Layout>
 
 export default Store

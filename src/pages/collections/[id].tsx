@@ -3,14 +3,12 @@ import { IS_BROWSER } from "@lib/constants"
 import { getCollectionIds } from "@lib/util/get-collection-ids"
 import CollectionTemplate from "@modules/collections/templates"
 import Head from "@modules/common/components/head"
-import Layout from "@modules/layout/templates"
 import SkeletonCollectionPage from "@modules/skeletons/templates/skeleton-collection-page"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import { ParsedUrlQuery } from "querystring"
-import { ReactElement } from "react"
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query"
-import { NextPageWithLayout, PrefetchedPageProps } from "../../types/global"
+import { PrefetchedPageProps } from "../../types/global"
 
 interface Params extends ParsedUrlQuery {
   id: string
@@ -45,9 +43,9 @@ export const fetchCollectionProducts = async ({
   }
 }
 
-const CollectionPage: NextPageWithLayout<PrefetchedPageProps> = ({
+const CollectionPage = ({
   notFound,
-}) => {
+}: PrefetchedPageProps) => {
   const { query, isFallback, replace } = useRouter()
   const id = typeof query.id === "string" ? query.id : ""
 
@@ -82,10 +80,6 @@ const CollectionPage: NextPageWithLayout<PrefetchedPageProps> = ({
   }
 
   return <></>
-}
-
-CollectionPage.getLayout = (page: ReactElement) => {
-  return <Layout>{page}</Layout>
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
