@@ -1,4 +1,4 @@
-import FooterCTA from "@modules/layout/components/footer-cta"
+import FooterCTA from "@theme/sections/footer-cta"
 import FooterNav from "@modules/layout/components/footer-nav"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
 
