@@ -112,12 +112,12 @@ const Register = () => {
       </form>
       <span className="text-center text-gray-700 text-small-regular mt-6">
         Already a member?{" "}
-        <button
-          onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
-          className="underline"
+        <Link
+          href={"/account/login"}
+          className={"underline"}
         >
           Sign in
-        </button>
+        </Link>
         .
       </span>
     </div>

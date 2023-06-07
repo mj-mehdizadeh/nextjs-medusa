@@ -6,6 +6,7 @@ import Spinner from "@modules/common/icons/spinner"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { FieldValues, useForm } from "react-hook-form"
+import Link from "next/link"
 
 interface SignInCredentials extends FieldValues {
   email: string
@@ -76,12 +77,12 @@ const Login = () => {
       </form>
       <span className="text-center text-gray-700 text-small-regular mt-6">
         Not a member?{" "}
-        <button
-          onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
+        <Link
+          href={"/account/register"}
           className="underline"
         >
           Join us
-        </button>
+        </Link>
         .
       </span>
     </div>

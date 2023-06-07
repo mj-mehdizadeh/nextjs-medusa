@@ -1,10 +1,10 @@
 import { useAccount } from "@lib/context/account-context"
+import Register from "@modules/account/components/register"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
-import Login from "../components/login"
 
-const LoginTemplate = () => {
-  const {  customer, retrievingCustomer } = useAccount()
+const RegisterTemplate = () => {
+  const { customer, retrievingCustomer } = useAccount()
 
   const router = useRouter()
 
@@ -16,9 +16,9 @@ const LoginTemplate = () => {
 
   return (
     <div className="w-full flex justify-center py-24">
-      <Login />
+      <Register />
     </div>
   )
 }
 
-export default LoginTemplate
+export default RegisterTemplate
