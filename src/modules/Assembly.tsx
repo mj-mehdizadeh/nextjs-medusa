@@ -13,7 +13,12 @@ export const Assembly: React.FC<{
     <>
       {template?.order.map((name) => {
         const section = template.sections[name];
-        if (!section || !sections[section._]) {
+        if (name === "main" && children) {
+          // @ts-ignore
+          return <div key={name}>{children(section)}</div>
+        }
+
+        if (!section || !section._ || !sections[section._]) {
           return (
             <div key={`invalid:${name}`}>
               <p>Invalid Component: {name}</p>
@@ -21,12 +26,10 @@ export const Assembly: React.FC<{
           );
         }
 
-        if (name === "main" && children) return <div key={name}>{children}</div>
-
         const SectionComponent = sections[section._];
 
-        return (
-          <SectionComponent
+        // @ts-ignore
+        return (<SectionComponent
             key={name}
             {...section}
           />
