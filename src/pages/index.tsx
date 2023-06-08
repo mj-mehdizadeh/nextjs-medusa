@@ -1,6 +1,7 @@
 import Head from "@modules/common/components/head"
-import FeaturedProducts from "@theme/sections/featured-products"
-import Hero from "@theme/sections/hero"
+import templates from "../templates.json"
+import { Assembly } from "@modules/Assembly"
+import { Template } from "../types/template"
 
 const Home = () => {
   return (
@@ -9,8 +10,7 @@ const Home = () => {
         title="Home"
         description="Shop all available models only at the ACME. Worldwide Shipping. Secure Payment."
       />
-      <Hero />
-      <FeaturedProducts />
+      <Assembly template={templates.index as Template}/>
     </>
   )
 }

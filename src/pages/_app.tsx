@@ -9,6 +9,10 @@ import "styles/globals.css"
 import { AppPropsWithLayout } from "types/global"
 import Layout from "@modules/layout/templates"
 
+import templates from "../templates.json"
+import { Template } from "../types/template"
+
+
 function App({
   Component,
   pageProps,
@@ -28,7 +32,7 @@ function App({
             <CartProvider>
               <StoreProvider>
                 <AccountProvider>
-                  <Layout>
+                  <Layout header={templates._header as Template} footer={templates._footer as Template}>
                     {getLayout(<Component {...pageProps} />)}
                   </Layout>
                 </AccountProvider>

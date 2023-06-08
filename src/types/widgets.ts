@@ -1,5 +1,3 @@
-import FeaturedProducts from "../theme/sections/featured-products"
-
 export type HeroProps = {
   title: string;
   description: string;
@@ -14,4 +12,16 @@ export type FeaturedProductsProps = {
   filter: any
   buttonText: string;
   buttonLink: string;
+};
+
+
+export type BannerProps = {
+  headline: string;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+};
+
+export type HeaderProps = {
+  title: string
 };
