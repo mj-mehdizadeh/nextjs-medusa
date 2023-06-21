@@ -1,4 +1,4 @@
-import { MEDUSA_BACKEND_URL, queryClient } from "@lib/config"
+import { MEDUSA_BACKEND_URL, NEXT_PUBLIC_MEDUSA_API_KEY, queryClient } from "@lib/config"
 import { AccountProvider } from "@lib/context/account-context"
 import { CartDropdownProvider } from "@lib/context/cart-dropdown-context"
 import { MobileMenuProvider } from "@lib/context/mobile-menu-context"
@@ -25,6 +25,7 @@ function App({
       queryClientProviderProps={{
         client: queryClient,
       }}
+      publishableApiKey={NEXT_PUBLIC_MEDUSA_API_KEY}
     >
       <Hydrate state={pageProps.dehydratedState}>
         <CartDropdownProvider>
