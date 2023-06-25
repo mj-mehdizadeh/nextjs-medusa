@@ -4,10 +4,9 @@ const OrdersTemplate = () => {
   return (
     <div className="w-full">
       <div className="mb-8 flex flex-col gap-y-4">
-        <h1 className="text-2xl-semi">Orders</h1>
+        <h1 className="text-2xl-semi">تاریخچه سفارشات</h1>
         <p className="text-base-regular">
-          View your previous orders and their status. You can also create
-          returns or exchanges for your orders if needed.
+          سفارشات قبلی و وضعیت آنها را مشاهده کنید. شما همچنین می توانید در صورت نیاز سفارشات راتعویض یا درخواست مرجوعی ثبت کنید.
         </p>
       </div>
       <div>

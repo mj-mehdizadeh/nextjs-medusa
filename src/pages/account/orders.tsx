@@ -6,7 +6,7 @@ import { NextPageWithLayout } from "types/global"
 const Orders: NextPageWithLayout = () => {
   return (
     <>
-      <Head title="Orders" description="Overview of your previous orders." />
+      <Head title="سفارش ها" description="مشاهده لیست سفارش های پیشین." />
       <OrdersTemplate />
     </>
   )

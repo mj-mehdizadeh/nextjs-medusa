@@ -55,7 +55,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             htmlFor={name}
             onClick={() => inputRef.current?.focus()}
             className={clsx(
-              "mx-3 px-1 right-0 transition-all absolute duration-300 top-3 -z-1 origin-0 text-gray-500",
+              "mx-3 px-1 right-0 text-right transition-all absolute duration-300 top-3 -z-1 origin-0 text-gray-500",
               {
                 "!text-rose-500": hasError,
               }

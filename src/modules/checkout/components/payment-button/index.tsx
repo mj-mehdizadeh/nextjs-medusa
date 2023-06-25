@@ -54,7 +54,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
         <PayPalPaymentButton notReady={notReady} session={paymentSession} />
       )
     default:
-      return <Button disabled>Select a payment method</Button>
+      return <Button disabled>یک روش پرداخت انتخاب کنید</Button>
   }
 }
 
@@ -235,7 +235,7 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
 
   return (
     <Button disabled={submitting || notReady} onClick={handlePayment}>
-      {submitting ? <Spinner /> : "Checkout"}
+      {submitting ? <Spinner /> : "ثبت سفارش"}
     </Button>
   )
 }

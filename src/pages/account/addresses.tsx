@@ -7,7 +7,7 @@ import { NextPageWithLayout } from "types/global"
 const Addresses: NextPageWithLayout = () => {
   return (
     <>
-      <Head title="Addresses" description="View your addresses" />
+      <Head title="آدرس ها" description="لیست آدرس ها" />
       <AddressesTemplate />
     </>
   )

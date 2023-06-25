@@ -13,7 +13,7 @@ const ShippingAddress = () => {
       {customer && (customer.shipping_addresses?.length || 0) > 0 && (
         <div className="mb-6 flex flex-col gap-y-4 bg-amber-100 p-4">
           <p className="text-small-regular">
-            {`Hi ${customer.first_name}, do you want to use one of your saved addresses?`}
+            {`آیا میخواهید از آدرس های ثبت شده استفاده کنید؟`}
           </p>
           <AddressSelect addresses={customer.shipping_addresses} />
         </div>
@@ -22,9 +22,9 @@ const ShippingAddress = () => {
         {({ register, formState: { errors, touchedFields } }) => (
           <div className="grid grid-cols-1 gap-y-2">
             <Input
-              label="Email"
+              label="آدرس ایمیل"
               {...register("email", {
-                required: "Email is required",
+                required: "آدرس ایمیل الزامیست",
                 pattern: emailRegex,
               })}
               autoComplete="email"
@@ -33,18 +33,18 @@ const ShippingAddress = () => {
             />
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="First name"
+                label="نام"
                 {...register("shipping_address.first_name", {
-                  required: "First name is required",
+                  required: "نام الزامیست",
                 })}
                 autoComplete="given-name"
                 errors={errors}
                 touched={touchedFields}
               />
               <Input
-                label="Last name"
+                label="نام خانوادگی"
                 {...register("shipping_address.last_name", {
-                  required: "Last name is required",
+                  required: "نام خانوادگی الزامیست",
                 })}
                 autoComplete="family-name"
                 errors={errors}
@@ -52,65 +52,57 @@ const ShippingAddress = () => {
               />
             </div>
             <Input
-              label="Company"
+              label="شرکت"
               {...register("shipping_address.company")}
               autoComplete="organization"
               errors={errors}
               touched={touchedFields}
             />
             <Input
-              label="Address"
+              label="آدرس, خیابان, کوچه,..."
               {...register("shipping_address.address_1", {
-                required: "Address is required",
+                required: "آدرس الزامیست",
               })}
               autoComplete="address-line1"
               errors={errors}
               touched={touchedFields}
             />
             <Input
-              label="Apartments, suite, etc."
+              label="پلاک, واحد, ..."
               {...register("shipping_address.address_2")}
               autoComplete="address-line2"
               errors={errors}
               touched={touchedFields}
             />
-            <div className="grid grid-cols-[122px_1fr] gap-x-2">
-              <Input
-                label="Postal code"
-                {...register("shipping_address.postal_code", {
-                  required: "Postal code is required",
-                })}
-                autoComplete="postal-code"
-                errors={errors}
-                touched={touchedFields}
-              />
-              <Input
-                label="City"
-                {...register("shipping_address.city", {
-                  required: "City is required",
-                })}
-                autoComplete="address-level2"
-                errors={errors}
-                touched={touchedFields}
-              />
-            </div>
-            <CountrySelect
-              {...register("shipping_address.country_code", {
-                required: "Country is required",
-              })}
-              autoComplete="country"
-              errors={errors}
-              touched={touchedFields}
-            />
             <Input
-              label="State / Province"
+              label="استان"
               {...register("shipping_address.province")}
               autoComplete="address-level1"
               errors={errors}
               touched={touchedFields}
             />
+            <div className="grid grid-cols-[1fr_122px] gap-x-2">
+              <Input
+                label="شهر"
+                {...register("shipping_address.city", {
+                  required: "شهر الزامیست",
+                })}
+                autoComplete="address-level2"
+                errors={errors}
+                touched={touchedFields}
+              />
+              <Input
+                label="کد پستی"
+                {...register("shipping_address.postal_code", {
+                  required: "کد پستی الزامیست",
+                })}
+                autoComplete="postal-code"
+                errors={errors}
+                touched={touchedFields}
+              />
+            </div>
             <Input
-              label="Phone"
+              label="شماره تماس"
               {...register("shipping_address.phone")}
               autoComplete="tel"
               errors={errors}

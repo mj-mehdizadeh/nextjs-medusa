@@ -34,9 +34,7 @@ const OrderCard = ({ order }: OrderCardProps) => {
             includeTaxes: false,
           })}
         </span>
-        <span className="pl-2">{`${numberOfLines} ${
-          numberOfLines > 1 ? "items" : "item"
-        }`}</span>
+        <span className="pl-2">{`${numberOfLines} کالا`}</span>
       </div>
       <div className="grid grid-cols-2 small:grid-cols-4 gap-4 my-4">
         {order.items.slice(0, 3).map((i) => {
@@ -60,14 +58,14 @@ const OrderCard = ({ order }: OrderCardProps) => {
             <span className="text-small-regular text-gray-700">
               + {numberOfLines - 4}
             </span>
-            <span className="text-small-regular text-gray-700">more</span>
+            <span className="text-small-regular text-gray-700">بیشتر</span>
           </div>
         )}
       </div>
       <div className="flex justify-end">
         <Link href={`/order/details/${order.id}`}>
           <a>
-            <Button variant="secondary">See details</Button>
+            <Button variant="secondary">نمایش جزییات</Button>
           </a>
         </Link>
       </div>

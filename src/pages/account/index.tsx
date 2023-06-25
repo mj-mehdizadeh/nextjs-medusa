@@ -7,7 +7,7 @@ import { NextPageWithLayout } from "types/global"
 const Account: NextPageWithLayout = () => {
   return (
     <>
-      <Head title="Account" description="Overview of your account activity." />
+      <Head title="حساب کاربری" description="خلاصه فعالیت ها" />
       <OverviewTemplate />
     </>
   )

@@ -135,14 +135,14 @@ const EditAddress: React.FC<EditAddressProps> = ({
             onClick={open}
           >
             <Edit size={16} />
-            Edit
+            ویرایش
           </button>
           <button
             className="text-small-regular text-gray-700 flex items-center gap-x-2"
             onClick={removeAddress}
           >
             <Trash />
-            Remove
+            حذف
           </button>
         </div>
       </div>
@@ -153,7 +153,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
           <div className="grid grid-cols-1 gap-y-2">
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="First name"
+                label="نام"
                 {...register("first_name", {
                   required: "First name is required",
                 })}
@@ -162,7 +162,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
                 autoComplete="given-name"
               />
               <Input
-                label="Last name"
+                label="نام خانوادگی"
                 {...register("last_name", {
                   required: "Last name is required",
                 })}
@@ -173,7 +173,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
             </div>
             <Input label="Company" {...register("company")} errors={errors} />
             <Input
-              label="Address"
+              label="آدرس, خیابان, کوچه"
               {...register("address_1", {
                 required: "Address is required",
               })}
@@ -182,23 +182,21 @@ const EditAddress: React.FC<EditAddressProps> = ({
               autoComplete="address-line1"
             />
             <Input
-              label="Apartment, suite, etc."
+              label="پلاک, واحد, ..."
               {...register("address_2")}
               errors={errors}
               autoComplete="address-line2"
             />
-            <div className="grid grid-cols-[144px_1fr] gap-x-2">
+
+            <Input
+              label="استان"
+              {...register("province")}
+              errors={errors}
+              autoComplete="address-level1"
+            />
+            <div className="grid grid-cols-[1fr_144px] gap-x-2">
               <Input
-                label="Postal code"
-                {...register("postal_code", {
-                  required: "Postal code is required",
-                })}
-                required
-                errors={errors}
-                autoComplete="postal-code"
-              />
-              <Input
-                label="City"
+                label="شهر"
                 {...register("city", {
                   required: "City is required",
                 })}
@@ -206,19 +204,22 @@ const EditAddress: React.FC<EditAddressProps> = ({
                 required
                 autoComplete="locality"
               />
+              <Input
+                label="کد پستی"
+                {...register("postal_code", {
+                  required: "Postal code is required",
+                })}
+                required
+                errors={errors}
+                autoComplete="postal-code"
+              />
             </div>
-            <Input
-              label="Province / State"
-              {...register("province")}
-              errors={errors}
-              autoComplete="address-level1"
-            />
             <CountrySelect
               {...register("country_code", { required: true })}
               autoComplete="country"
             />
             <Input
-              label="Phone"
+              label="شماره تماس"
               {...register("phone")}
               errors={errors}
               autoComplete="phone"
@@ -230,10 +231,10 @@ const EditAddress: React.FC<EditAddressProps> = ({
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={close}>
-            Cancel
+            بستن
           </Button>
           <Button onClick={submit} disabled={submitting}>
-            Save
+            ذخیره
             {submitting && <Spinner />}
           </Button>
         </Modal.Footer>
