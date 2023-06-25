@@ -71,9 +71,6 @@ const Addresses = () => {
                       {cart.shipping_address.postal_code},{" "}
                       {cart.shipping_address.city}
                     </span>
-                    <span>
-                      {cart.shipping_address.country_code?.toUpperCase()}
-                    </span>
                     <div className="mt-4 flex flex-col">
                       <span>{cart.shipping_address.phone}</span>
                       <span>{cart.email}</span>

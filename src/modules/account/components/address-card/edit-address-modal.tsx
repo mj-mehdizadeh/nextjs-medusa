@@ -124,8 +124,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
               {address.postal_code}, {address.city}
             </span>
             <span>
-              {address.province && `${address.province}, `}
-              {address.country_code?.toUpperCase()}
+              {address.province && `${address.province}`}
             </span>
           </div>
         </div>

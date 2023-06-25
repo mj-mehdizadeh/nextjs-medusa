@@ -66,7 +66,7 @@ const Title: React.FC = ({ children }) => {
   const { close } = useModal()
 
   return (
-    <Dialog.Title className="flex items-center justify-between">
+    <Dialog.Title className="flex items-center justify-between mb-7">
       <div className="text-large-semi">{children}</div>
       <div>
         <button onClick={close}>
@@ -86,7 +86,7 @@ const Description: React.FC = ({ children }) => {
 }
 
 const Body: React.FC = ({ children }) => {
-  return <div className="flex-1">{children}</div>
+  return <div className="flex-1 mb-7">{children}</div>
 }
 
 const Footer: React.FC = ({ children }) => {
