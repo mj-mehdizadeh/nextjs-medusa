@@ -4,7 +4,7 @@ import Head from "@modules/common/components/head"
 const Login = () => {
   return (
     <>
-      <Head title="Sign in" description="Sign in to your ACME account." />
+      <Head title="ورود به حساب کاربری" description="به حساب کاربری خود وارد شوید" />
       <LoginTemplate />
     </>
   )

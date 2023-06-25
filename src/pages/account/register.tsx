@@ -4,7 +4,7 @@ import RegisterTemplate from "@modules/account/templates/register-template"
 const Register = () => {
   return (
     <>
-      <Head title="Register" description="create new ACME account." />
+      <Head title="ثبت نام" description="ایجاد حساب کاربری جدید" />
       <RegisterTemplate />
     </>
   )

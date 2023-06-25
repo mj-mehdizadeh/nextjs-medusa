@@ -44,7 +44,7 @@ const Nav = ({ settings: {title}}: Section<HeaderProps>) => {
           <div className="hidden small:flex items-center gap-x-6 h-full">
             {process.env.FEATURE_SEARCH_ENABLED && <DesktopSearchModal />}
             <Link href="/account">
-              <a>Account</a>
+              <a>حساب کاربری</a>
             </Link>
           </div>
           <CartDropdown />

@@ -20,7 +20,7 @@ export type NativeSelectProps = {
 const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
   (
     {
-      placeholder = "Select...",
+      placeholder = "انتخاب...",
       errors,
       touched,
       className,
@@ -70,7 +70,7 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
             <option value="">{placeholder}</option>
             {children}
           </select>
-          <span className="absolute right-4 inset-y-0 flex items-center pointer-events-none">
+          <span className="absolute left-2 inset-y-0 flex items-center pointer-events-none">
             <ChevronDown />
           </span>
         </div>

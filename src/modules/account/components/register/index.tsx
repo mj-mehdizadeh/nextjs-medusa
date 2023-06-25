@@ -23,7 +23,7 @@ const Register = () => {
   const router = useRouter()
 
   const handleError = (e: Error) => {
-    setAuthError("An error occured. Please try again.")
+    setAuthError("خطایی رخ داده, لطفا دوباره تلاش کنید")
   }
 
   const {
@@ -49,39 +49,38 @@ const Register = () => {
           <Spinner size={24} />
         </div>
       )}
-      <h1 className="text-large-semi uppercase mb-6">Become a Acme Member</h1>
+      <h1 className="text-large-semi uppercase mb-6">ایجاد حساب کاربری</h1>
       <p className="text-center text-base-regular text-gray-700 mb-4">
-        Create your Acme Member profile, and get access to an enhanced shopping
-        experience.
+        برای تجربه خرید آنلاین بهتر با ما, یک حساب کاربری ایجاد کنید.
       </p>
       <form className="w-full flex flex-col" onSubmit={onSubmit}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
-            label="First name"
-            {...register("first_name", { required: "First name is required" })}
+            label="نام"
+            {...register("first_name", { required: "نام الزامیست" })}
             autoComplete="given-name"
             errors={errors}
           />
           <Input
-            label="Last name"
-            {...register("last_name", { required: "Last name is required" })}
+            label="نام خانوادگی"
+            {...register("last_name", { required: "نام خانوادگی الزامیست" })}
             autoComplete="family-name"
             errors={errors}
           />
           <Input
-            label="Email"
-            {...register("email", { required: "Email is required" })}
+            label="ادرس ایمیل"
+            {...register("email", { required: "آدرس ایمیل الزامیست" })}
             autoComplete="email"
             errors={errors}
           />
           <Input
-            label="Phone"
+            label="شماره تماس"
             {...register("phone")}
             autoComplete="tel"
             errors={errors}
           />
           <Input
-            label="Password"
+            label="رمز ورود"
             {...register("password", {
               required: "Password is required",
             })}
@@ -93,30 +92,30 @@ const Register = () => {
         {authError && (
           <div>
             <span className="text-rose-500 w-full text-small-regular">
-              These credentials do not match our records
+              اطلاعات حساب کاربری نامعتبر است.
             </span>
           </div>
         )}
         <span className="text-center text-gray-700 text-small-regular mt-6">
-          By creating an account, you agree to Acme&apos;s{" "}
+          با ایجاد حساب کاربری با&apos;s{" "}
           <Link href="/content/privacy-policy">
-            <a className="underline">Privacy Policy</a>
+            <a className="underline">سیاست حفظ حریم خصوصی</a>
           </Link>{" "}
-          and{" "}
+          و{" "}
           <Link href="/content/terms-of-use">
-            <a className="underline">Terms of Use</a>
-          </Link>
+            <a className="underline">قوانین و مقررات</a>
+          </Link>{" "}موافقت میکنم
           .
         </span>
-        <Button className="mt-6">Join</Button>
+        <Button className="mt-6">ایجاد حساب کاربری</Button>
       </form>
       <span className="text-center text-gray-700 text-small-regular mt-6">
-        Already a member?{" "}
+        قبلا حساب کاربری ایجاد کرده اید؟{" "}
         <Link
           href={"/account/login"}
           className={"underline"}
         >
-          Sign in
+          بازگشت به صفحه ورود
         </Link>
         .
       </span>

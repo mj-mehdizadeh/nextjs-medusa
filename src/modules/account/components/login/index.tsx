@@ -20,7 +20,7 @@ const Login = () => {
   const router = useRouter()
 
   const handleError = (_e: Error) => {
-    setAuthError("Invalid email or password")
+    setAuthError("آدرس ایمیل یا رمز ورود نامعتبر است")
   }
 
   const {
@@ -46,21 +46,21 @@ const Login = () => {
           <Spinner size={24} />
         </div>
       )}
-      <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
+      <h1 className="text-large-semi uppercase mb-6">خوش آمدید</h1>
       <p className="text-center text-base-regular text-gray-700 mb-8">
-        Sign in to access an enhanced shopping experience.
+        برای امکان تجربه خرید بهتر، به حساب به کاربری خود وارد شوید.
       </p>
       <form className="w-full" onSubmit={onSubmit}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
-            label="Email"
-            {...register("email", { required: "Email is required" })}
+            label="آدرس ایمیل"
+            {...register("email", { required: "آدرس ایمیل الزامیست" })}
             autoComplete="email"
             errors={errors}
           />
           <Input
-            label="Password"
-            {...register("password", { required: "Password is required" })}
+            label="رمز ورود"
+            {...register("password", { required: "رمز ورود الزامیست" })}
             type="password"
             autoComplete="current-password"
             errors={errors}
@@ -69,19 +69,19 @@ const Login = () => {
         {authError && (
           <div>
             <span className="text-rose-500 w-full text-small-regular">
-              These credentials do not match our records
+              اطلاعات حساب کاربری نامعتبر است
             </span>
           </div>
         )}
-        <Button className="mt-6">Enter</Button>
+        <Button className="mt-6">ورود به حساب کاربری</Button>
       </form>
       <span className="text-center text-gray-700 text-small-regular mt-6">
-        Not a member?{" "}
+        حساب کاربری نداردی؟{" "}
         <Link
           href={"/account/register"}
           className="underline"
         >
-          Join us
+          ثبت نام کنید
         </Link>
         .
       </span>

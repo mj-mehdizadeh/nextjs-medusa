@@ -21,7 +21,7 @@ const CartDropdown = () => {
     <div className="h-full z-50" onMouseEnter={open} onMouseLeave={close}>
       <Popover className="relative h-full">
         <Link href="/cart" passHref>
-          <Popover.Button className="h-full">{`My Bag (${totalItems})`}</Popover.Button>
+          <Popover.Button className="h-full">{`سبد خرید (${totalItems})`}</Popover.Button>
         </Link>
         <Transition
           show={state}
@@ -35,10 +35,10 @@ const CartDropdown = () => {
         >
           <Popover.Panel
             static
-            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[382px] text-gray-900"
+            className="hidden small:block absolute top-[calc(100%+1px)] left-0 bg-white border-x border-b border-gray-200 w-[382px] text-gray-900"
           >
             <div className="p-4 flex items-center justify-center">
-              <h3 className="text-large-semi">Shopping Bag</h3>
+              <h3 className="text-large-semi">سبد خرید</h3>
             </div>
             {cart && items?.length ? (
               <>
@@ -59,7 +59,7 @@ const CartDropdown = () => {
                           <div className="flex flex-col flex-1">
                             <div className="flex items-start justify-between">
                               <div>
-                                <h3 className="text-base-regular overflow-ellipsis overflow-hidden whitespace-nowrap mr-4 w-[130px]">
+                                <h3 className="text-base-regular overflow-ellipsis overflow-hidden whitespace-nowrap w-[130px]">
                                   <Link
                                     href={`/products/${item.variant.product.handle}`}
                                   >
@@ -67,7 +67,7 @@ const CartDropdown = () => {
                                   </Link>
                                 </h3>
                                 <LineItemOptions variant={item.variant} />
-                                <span>Quantity: {item.quantity}</span>
+                                <span>تعداد: {item.quantity}</span>
                               </div>
                               <div className="flex justify-end">
                                 <LineItemPrice
@@ -85,7 +85,7 @@ const CartDropdown = () => {
                                 onClick={() => deleteItem(item.id)}
                               >
                                 <Trash size={14} />
-                                <span>Remove</span>
+                                <span>حذف</span>
                               </button>
                             </div>
                           </div>
@@ -96,8 +96,8 @@ const CartDropdown = () => {
                 <div className="p-4 flex flex-col gap-y-4 text-small-regular">
                   <div className="flex items-center justify-between">
                     <span className="text-gray-700 font-semibold">
-                      Subtotal{" "}
-                      <span className="font-normal">(incl. taxes)</span>
+                      مجموع{" "}
+                      <span className="font-normal">با احتساب مالیات</span>
                     </span>
                     <span className="text-large-semi">
                       {formatAmount({
@@ -109,7 +109,7 @@ const CartDropdown = () => {
                   </div>
                   <Link href="/cart" passHref>
                     <a>
-                      <Button>Go to bag</Button>
+                      <Button>تکمیل خرید</Button>
                     </a>
                   </Link>
                 </div>
@@ -120,12 +120,12 @@ const CartDropdown = () => {
                   <div className="bg-gray-900 text-small-regular flex items-center justify-center w-6 h-6 rounded-full text-white">
                     <span>0</span>
                   </div>
-                  <span>Your shopping bag is empty.</span>
+                  <span>سبد خرید شما خالیست</span>
                   <div>
                     <Link href="/store">
                       <a>
-                        <span className="sr-only">Go to all products page</span>
-                        <Button onClick={close}>Explore products</Button>
+                        <span className="sr-only">رفتن به صفحه محصولات</span>
+                        <Button onClick={close}>جستجو محصولات</Button>
                       </a>
                     </Link>
                   </div>
