@@ -5,12 +5,12 @@ import { Assembly } from "@modules/Assembly"
 import { Section, Template } from "../../../types/template"
 import { HeaderProps } from "../../../types/widgets"
 
-const Layout: React.FC<{header: Template, footer: Template}> = ({ children, header, footer }) => {
+const Layout: React.FC<{header?: Template, footer?: Template}> = ({ children, header, footer }) => {
   return (
     <div>
-      <Assembly template={header}>
+      {header && <Assembly template={header}>
         {(section: Section<HeaderProps>) => <Nav {...section} />}
-      </Assembly>
+      </Assembly>}
       <main className="relative">{children}</main>
       <Footer />
     </div>

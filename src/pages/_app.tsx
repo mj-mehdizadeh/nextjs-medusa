@@ -9,14 +9,14 @@ import "styles/globals.css"
 import { AppPropsWithLayout } from "types/global"
 import Layout from "@modules/layout/templates"
 
-import templates from "../templates.json"
 import { Template } from "../types/template"
+import ReloadListener from "@lib/hooks/reload-listener"
 
 
 function App({
   Component,
   pageProps,
-}: AppPropsWithLayout<{ dehydratedState?: unknown }>) {
+}: AppPropsWithLayout<{ dehydratedState?: unknown, _header?: Template, _footer?: Template }>) {
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
@@ -27,13 +27,14 @@ function App({
       }}
       publishableApiKey={NEXT_PUBLIC_MEDUSA_API_KEY}
     >
+      <ReloadListener/>
       <Hydrate state={pageProps.dehydratedState}>
         <CartDropdownProvider>
           <MobileMenuProvider>
             <CartProvider>
               <StoreProvider>
                 <AccountProvider>
-                  <Layout header={templates._header as Template} footer={templates._footer as Template}>
+                  <Layout header={pageProps?._header} footer={pageProps?._footer}>
                     {getLayout(<Component {...pageProps} />)}
                   </Layout>
                 </AccountProvider>
